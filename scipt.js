@@ -2,8 +2,8 @@
    CONFIGURATION — MODIFIEZ UNIQUEMENT CES VALEURS
    ========================================================= */
 const CONFIG = {
-  // Numéro WhatsApp au format international SANS le + (ex: 22670000000)
-  whatsappNumber: "22670000000",
+  // Numéro WhatsApp au format international SANS le + (ex: 22654299523)
+  whatsappNumber: "22654299523",
   // Message par défaut pour le bouton flottant et le hero
   defaultMessage: "Bonjour, je souhaite commander du soumbala naturel du Burkina Faso."
 };
@@ -42,7 +42,7 @@ const PRODUCTS = [
 ];
 
 /* =========================================================
-   FAQ
+   FAQ (page d'accueil)
    ========================================================= */
 const FAQS = [
   {
@@ -83,6 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initCart();
   initHeaderScroll();
   updateCartUI();
+  initCounters();
 });
 
 /* =========================================================
@@ -117,7 +118,6 @@ function renderProducts() {
     </article>
   `).join("");
 
-  // Événements produits
   grid.querySelectorAll("[data-add]").forEach(btn => {
     btn.addEventListener("click", () => addToCart(Number(btn.dataset.add)));
   });
@@ -125,12 +125,11 @@ function renderProducts() {
     btn.addEventListener("click", () => orderSingle(Number(btn.dataset.order)));
   });
 
-  // Re-observer les nouveaux éléments
   observeReveals();
 }
 
 /* =========================================================
-   RENDU FAQ
+   RENDU FAQ (page d'accueil)
    ========================================================= */
 function renderFAQ() {
   const list = document.getElementById("faqList");
@@ -150,7 +149,6 @@ function renderFAQ() {
     btn.addEventListener("click", () => {
       const item = btn.closest(".faq-item");
       const isActive = item.classList.contains("active");
-      // Fermer tous les autres
       list.querySelectorAll(".faq-item").forEach(el => {
         el.classList.remove("active");
         el.querySelector(".faq-question").setAttribute("aria-expanded", "false");
@@ -166,23 +164,48 @@ function renderFAQ() {
 }
 
 /* =========================================================
-   NAVIGATION MOBILE + LIENS ACTIFS
+   NAVIGATION MOBILE + LIENS ACTIFS  (CORRIGÉ)
    ========================================================= */
 function initNavigation() {
   const hamburger = document.getElementById("hamburger");
   const nav = document.getElementById("nav");
   const navLinks = document.querySelectorAll(".nav-link");
 
-  hamburger?.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    nav.classList.toggle("active");
+  if (!hamburger || !nav) return;
+
+  // Ouvre / ferme le menu au clic sur le hamburger
+  hamburger.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const isOpen = nav.classList.toggle("active");
+    hamburger.classList.toggle("active", isOpen);
+    hamburger.setAttribute("aria-expanded", isOpen ? "true" : "false");
   });
 
+  // Ferme le menu au clic sur un lien
   navLinks.forEach(link => {
     link.addEventListener("click", () => {
-      hamburger?.classList.remove("active");
-      nav?.classList.remove("active");
+      nav.classList.remove("active");
+      hamburger.classList.remove("active");
+      hamburger.setAttribute("aria-expanded", "false");
     });
+  });
+
+  // Ferme le menu au clic en dehors
+  document.addEventListener("click", (e) => {
+    if (!nav.classList.contains("active")) return;
+    if (nav.contains(e.target) || hamburger.contains(e.target)) return;
+    nav.classList.remove("active");
+    hamburger.classList.remove("active");
+    hamburger.setAttribute("aria-expanded", "false");
+  });
+
+  // Ferme le menu si on redimensionne vers desktop
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 768) {
+      nav.classList.remove("active");
+      hamburger.classList.remove("active");
+      hamburger.setAttribute("aria-expanded", "false");
+    }
   });
 
   // Scroll spy — uniquement pour les 3 sections du menu principal
@@ -191,19 +214,21 @@ function initNavigation() {
     .map(id => document.getElementById(id))
     .filter(Boolean);
 
-  window.addEventListener("scroll", () => {
-    const scrollY = window.scrollY + 120;
-    let currentId = "accueil";
-    sections.forEach(section => {
-      const top = section.offsetTop;
-      const height = section.offsetHeight;
-      if (scrollY >= top && scrollY < top + height) {
-        currentId = section.id;
-      }
+  if (sections.length) {
+    window.addEventListener("scroll", () => {
+      const scrollY = window.scrollY + 120;
+      let currentId = sections[0].id;
+      sections.forEach(section => {
+        const top = section.offsetTop;
+        const height = section.offsetHeight;
+        if (scrollY >= top && scrollY < top + height) {
+          currentId = section.id;
+        }
+      });
+      navLinks.forEach(l => l.classList.remove("active"));
+      document.querySelector(`.nav-link[href="#${currentId}"]`)?.classList.add("active");
     });
-    navLinks.forEach(l => l.classList.remove("active"));
-    document.querySelector(`.nav-link[href="#${currentId}"]`)?.classList.add("active");
-  });
+  }
 }
 
 /* =========================================================
@@ -211,6 +236,7 @@ function initNavigation() {
    ========================================================= */
 function initHeaderScroll() {
   const header = document.getElementById("header");
+  if (!header) return;
   window.addEventListener("scroll", () => {
     if (window.scrollY > 30) header.classList.add("scrolled");
     else header.classList.remove("scrolled");
@@ -240,10 +266,9 @@ function observeReveals() {
 }
 
 function initScrollAnimations() {
-  // Ajouter .reveal aux sections principales
-  document.querySelectorAll(".section-head, .feature-card, .avis-card, .apropos-image, .apropos-text, .contact-info, .contact-image").forEach(el => {
-    el.classList.add("reveal");
-  });
+  document.querySelectorAll(
+    ".section-head, .feature-card, .avis-card, .apropos-image, .apropos-text, .contact-info, .contact-image, .stat-card, .process-step, .galerie-item, .coordonnee-card, .info-card"
+  ).forEach(el => el.classList.add("reveal"));
   observeReveals();
 }
 
@@ -257,23 +282,24 @@ function initCart() {
   const cartPanel = document.getElementById("cartPanel");
   const checkoutBtn = document.getElementById("checkoutBtn");
 
+  if (!cartBtn || !cartPanel) return;
+
   const openCart = () => {
     cartPanel.classList.add("active");
-    cartOverlay.classList.add("active");
+    cartOverlay?.classList.add("active");
     document.body.style.overflow = "hidden";
   };
   const closeCart = () => {
     cartPanel.classList.remove("active");
-    cartOverlay.classList.remove("active");
+    cartOverlay?.classList.remove("active");
     document.body.style.overflow = "";
   };
 
-  cartBtn?.addEventListener("click", openCart);
+  cartBtn.addEventListener("click", openCart);
   cartClose?.addEventListener("click", closeCart);
   cartOverlay?.addEventListener("click", closeCart);
   checkoutBtn?.addEventListener("click", checkoutWhatsApp);
 
-  // Fermer avec Escape
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeCart();
   });
@@ -407,6 +433,7 @@ function showToast(message, type = "success") {
     toast.className = "toast";
   }, 2500);
 }
+
 /* =========================================================
    COMPTEURS ANIMÉS (Page À propos)
    ========================================================= */
@@ -418,13 +445,11 @@ function initCounters() {
     const target = Number(el.dataset.count);
     const duration = 1800;
     const startTime = performance.now();
-    const startValue = 0;
 
     const step = (now) => {
       const progress = Math.min((now - startTime) / duration, 1);
-      // Easing easeOutQuad
       const eased = 1 - (1 - progress) * (1 - progress);
-      const value = Math.floor(startValue + (target - startValue) * eased);
+      const value = Math.floor(target * eased);
       el.textContent = value.toLocaleString("fr-FR");
       if (progress < 1) requestAnimationFrame(step);
       else el.textContent = target.toLocaleString("fr-FR");
@@ -449,13 +474,9 @@ function initCounters() {
   counters.forEach(c => observer.observe(c));
 }
 
-// Ajouter l'appel dans le DOMContentLoaded
-document.addEventListener("DOMContentLoaded", initCounters);
 /* =========================================================
    PAGE CONTACT — FAQ + FORMULAIRE
    ========================================================= */
-
-/* ===== FAQ spécifique au contact ===== */
 const FAQ_CONTACT = [
   {
     q: "Quels sont les délais de réponse ?",
@@ -511,7 +532,6 @@ function renderFAQContact() {
   observeReveals();
 }
 
-/* ===== Formulaire de contact → WhatsApp ===== */
 function initContactForm() {
   const form = document.getElementById("contactForm");
   if (!form) return;
@@ -552,7 +572,6 @@ function initContactForm() {
     }
   };
 
-  // Validation en direct
   Object.keys(fields).forEach(name => {
     const field = fields[name];
     if (!field.el) return;
@@ -587,13 +606,11 @@ function initContactForm() {
 
     if (hasError) {
       showToast("Veuillez corriger les erreurs du formulaire.", "error");
-      // Focus sur le premier champ en erreur
       const firstError = form.querySelector(".error");
       if (firstError) firstError.focus();
       return;
     }
 
-    // Construction du message WhatsApp
     const lines = [
       "Bonjour, je vous contacte depuis votre site web.",
       "",
@@ -611,13 +628,10 @@ function initContactForm() {
 
     showToast("Redirection vers WhatsApp...");
     form.reset();
-
-    // Nettoyer les erreurs
     Object.keys(fields).forEach(name => setError(name, ""));
   });
 }
 
-/* ===== Initialisation globale pour la page contact ===== */
 document.addEventListener("DOMContentLoaded", () => {
   renderFAQContact();
   initContactForm();
