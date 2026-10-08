@@ -539,26 +539,60 @@ h2 span { color: var(--dore); }
 
 @media (max-width: 768px) {
   .section { padding: 60px 0; }
-  .hamburger { display: flex; }
+
+  /* --- Hamburger visible --- */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 42px;
+    height: 42px;
+    padding: 6px;
+    border-radius: 10px;
+    background: rgba(107, 62, 29, 0.06);
+    transition: var(--transition);
+    z-index: 1100;
+  }
+  .hamburger:hover { background: rgba(107, 62, 29, 0.12); }
+
+  /* --- Nav mobile en panneau --- */
   .nav {
     position: fixed;
-    top: 72px; left: 0;
+    top: 72px;
+    left: 0;
     width: 100%;
     background: var(--beige-clair);
     box-shadow: 0 10px 25px rgba(107, 62, 29, 0.15);
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease;
+    transition: max-height 0.35s ease;
+    z-index: 1050;
   }
   .nav.active { max-height: 420px; }
-  .nav-list { flex-direction: column; gap: 0; padding: 10px 0; }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 0;
+    padding: 10px 0;
+  }
   .nav-list li { width: 100%; }
-  .nav-link { display: block; padding: 14px 25px; border-bottom: 1px solid rgba(107, 62, 29, 0.06); }
+  .nav-link {
+    display: block;
+    padding: 14px 25px;
+    border-bottom: 1px solid rgba(107, 62, 29, 0.06);
+    font-size: 0.95rem;
+  }
   .nav-link::after { display: none; }
+
+  /* --- Hero mobile --- */
   .hero { min-height: 90vh; padding: 110px 0 60px; }
   .hero-buttons { flex-direction: column; }
   .hero-buttons .btn { width: 100%; }
   .hero-badges { gap: 15px; font-size: 0.85rem; }
+
+  /* --- Footer mobile --- */
   .footer-grid { grid-template-columns: 1fr; gap: 30px; }
 }
 
