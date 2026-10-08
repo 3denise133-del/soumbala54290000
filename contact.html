@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Soumbala Naturel du Burkina Faso</title>
+  <meta name="description" content="Contactez Soumbala Naturel pour commander votre soumbala traditionnel du Burkina Faso. WhatsApp, email, adresse et formulaire de contact.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- ===== HEADER / NAVIGATION ===== -->
+  <header class="header" id="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <i class="fa-solid fa-seedling"></i>
+        <span>Soumbala<strong>Naturel</strong></span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Accueil</a></li>
+          <li><a href="a-propos.html" class="nav-link">À propos</a></li>
+          <li><a href="contact.html" class="nav-link active">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="cart-btn" id="cartBtn" aria-label="Panier">
+          <i class="fa-solid fa-basket-shopping"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== HERO CONTACT ===== -->
+  <section class="page-hero contact-hero" id="top">
+    <div class="page-hero-overlay"></div>
+    <div class="container page-hero-content">
+      <p class="hero-tag">Nous Sommes à Votre Écoute</p>
+      <h1>Contactez <span>Soumbala Naturel</span></h1>
+      <p class="hero-text">
+        Une question, une commande spéciale, un besoin en gros ?
+        Notre équipe vous répond rapidement et avec plaisir.
+      </p>
+      <div class="hero-buttons">
+        <a href="https://wa.me/22654299523?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20le%20soumbala."
+           target="_blank" class="btn btn-whatsapp">
+          <i class="fa-brands fa-whatsapp"></i> Discuter sur WhatsApp
+        </a>
+        <a href="#formulaire" class="btn btn-outline">Envoyer un message</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COORDONNÉES RAPIDES ===== -->
+  <section class="section coordonnees">
+    <div class="container">
+      <div class="coordonnees-grid">
+        <div class="coordonnee-card reveal">
+          <div class="coordonnee-icon whatsapp-icon">
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+          <h3>WhatsApp</h3>
+          <p>Réponse rapide garantie</p>
+          <a href="https://wa.me/22654299523?text=Bonjour%2C%20je%20souhaite%20des%20informations."
+             target="_blank" class="coordonnee-link">
+            +226 70 00 00 00
+          </a>
+        </div>
+
+        <div class="coordonnee-card reveal">
+          <div class="coordonnee-icon email-icon">
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+          <h3>Email</h3>
+          <p>Pour les demandes détaillées</p>
+          <a href="mailto:contact@soumbala-naturel.bf" class="coordonnee-link">
+            contact@soumbala-naturel.bf
+          </a>
+        </div>
+
+        <div class="coordonnee-card reveal">
+          <div class="coordonnee-icon phone-icon">
+            <i class="fa-solid fa-phone"></i>
+          </div>
+          <h3>Téléphone</h3>
+          <p>Lun - Sam : 8h à 19h</p>
+          <a href="tel:+22654299523" class="coordonnee-link">
+            +226 54 29 95 23
+          </a>
+        </div>
+
+        <div class="coordonnee-card reveal">
+          <div class="coordonnee-icon location-icon">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+          <h3>Adresse</h3>
+          <p>Notre atelier principal</p>
+          <span class="coordonnee-link">Ouagadougou, Burkina Faso</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FORMULAIRE + INFOS ===== -->
+  <section class="section formulaire-section" id="formulaire">
+    <div class="container formulaire-grid">
+      <!-- Formulaire -->
+      <div class="formulaire-wrapper">
+        <p class="section-tag">Formulaire de contact</p>
+        <h2>Envoyez-nous un <span>message</span></h2>
+        <p class="formulaire-intro">
+          Remplissez le formulaire ci-dessous. Nous vous répondrons dans les plus brefs délais
+          (généralement sous 24h). Vous pouvez aussi nous écrire directement sur WhatsApp.
+        </p>
+
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nom">Nom complet <span>*</span></label>
+              <input type="text" id="nom" name="nom" placeholder="Ex : Aminata Kaboré" required>
+              <small class="form-error" data-error="nom"></small>
+            </div>
+            <div class="form-group">
+              <label for="telephone">Téléphone <span>*</span></label>
+              <input type="tel" id="telephone" name="telephone" placeholder="Ex : +226 70 00 00 00" required>
+              <small class="form-error" data-error="telephone"></small>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Ex : vous@email.com">
+            <small class="form-error" data-error="email"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="sujet">Sujet <span>*</span></label>
+            <select id="sujet" name="sujet" required>
+              <option value="">— Choisissez un sujet —</option>
+              <option value="Commande">Passer une commande</option>
+              <option value="Information">Demande d'information</option>
+              <option value="Devis">Demande de devis / gros</option>
+              <option value="Livraison">Question sur la livraison</option>
+              <option value="Autre">Autre</option>
+            </select>
+            <small class="form-error" data-error="sujet"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Votre message <span>*</span></label>
+            <textarea id="message" name="message" rows="5"
+              placeholder="Décrivez votre demande (produit souhaité, quantité, ville de livraison...)" required></textarea>
+            <small class="form-error" data-error="message"></small>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary btn-full">
+              <i class="fa-solid fa-paper-plane"></i> Envoyer le message
+            </button>
+          </div>
+
+          <p class="form-note">
+            <i class="fa-solid fa-lock"></i>
+            Vos informations restent confidentielles et ne seront jamais partagées.
+          </p>
+        </form>
+      </div>
+
+      <!-- Infos latérales -->
+      <div class="infos-wrapper">
+        <div class="info-card reveal">
+          <div class="info-card-header">
+            <i class="fa-solid fa-clock"></i>
+            <h3>Horaires d'ouverture</h3>
+          </div>
+          <ul class="horaires-list">
+            <li><span>Lundi - Vendredi</span><strong>8h - 19h</strong></li>
+            <li><span>Samedi</span><strong>8h - 16h</strong></li>
+            <li><span>Dimanche</span><strong class="closed">Fermé</strong></li>
+          </ul>
+        </div>
+
+        <div class="info-card reveal">
+          <div class="info-card-header">
+            <i class="fa-solid fa-headset"></i>
+            <h3>Service client</h3>
+          </div>
+          <p class="info-card-text">
+            Notre équipe est disponible pour vous accompagner dans vos commandes,
+            vous conseiller sur les formats et organiser la livraison.
+          </p>
+          <a href="https://wa.me/22654299523?text=Bonjour%2C%20je%20souhaite%20un%20conseil."
+             target="_blank" class="btn btn-whatsapp btn-full">
+            <i class="fa-brands fa-whatsapp"></i> Parler à un conseiller
+          </a>
+        </div>
+
+        <div class="info-card reveal">
+          <div class="info-card-header">
+            <i class="fa-solid fa-share-nodes"></i>
+            <h3>Suivez-nous</h3>
+          </div>
+          <p class="info-card-text">Restez informés de nos nouveautés et promotions.</p>
+          <div class="socials">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://wa.me/22654299523" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CARTE / LOCALISATION ===== -->
+  <section class="section carte-section">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-tag">Localisation</p>
+        <h2>Où nous <span>trouver</span></h2>
+        <p class="section-desc">Nous sommes basés à Ouagadougou et livrons dans tout le Burkina Faso.</p>
+      </div>
+
+      <div class="carte-wrapper reveal">
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=-1.6%2C12.28%2C-1.4%2C12.45&layer=mapnik&marker=12.3686%2C-1.5275"
+          loading="lazy"
+          title="Carte de Ouagadougou, Burkina Faso">
+        </iframe>
+        <div class="carte-info">
+          <div class="carte-info-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>
+              <strong>Atelier principal</strong>
+              <span>Ouagadougou, Burkina Faso</span>
+            </div>
+          </div>
+          <div class="carte-info-item">
+            <i class="fa-solid fa-truck-fast"></i>
+            <div>
+              <strong>Zones de livraison</strong>
+              <span>Ouagadougou, Bobo-Dioulasso et autres villes sur demande</span>
+            </div>
+          </div>
+          <div class="carte-info-item">
+            <i class="fa-solid fa-clock"></i>
+            <div>
+              <strong>Délai moyen</strong>
+              <span>24h à 48h selon la ville</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ RAPIDE CONTACT ===== -->
+  <section class="section faq-contact">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-tag">Avant de nous écrire</p>
+        <h2>Questions <span>fréquentes</span></h2>
+      </div>
+      <div class="faq-list" id="faqContactList">
+        <!-- FAQ générée par JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA FINAL ===== -->
+  <section class="section cta-final">
+    <div class="container cta-content">
+      <h2>Prêt à <span>commander</span> votre soumbala ?</h2>
+      <p>Un message suffit pour recevoir votre soumbala naturel partout au Burkina Faso.</p>
+      <div class="cta-buttons">
+        <a href="https://wa.me/22654299523?text=Bonjour%2C%20je%20souhaite%20commander%20du%20soumbala."
+           target="_blank" class="btn btn-whatsapp">
+          <i class="fa-brands fa-whatsapp"></i> Commander sur WhatsApp
+        </a>
+        <a href="index.html#produits" class="btn btn-outline">Voir les produits</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="logo footer-logo">
+          <i class="fa-solid fa-seedling"></i>
+          <span>Soumbala<strong>Naturel</strong></span>
+        </a>
+        <p>Le goût authentique du Burkina Faso, dans votre cuisine.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><i class="fa-brands fa-whatsapp"></i> +226 54 29 95 23</li>
+          <li><i class="fa-solid fa-envelope"></i> contact@soumbala-naturel.bf</li>
+          <li><i class="fa-solid fa-location-dot"></i> Ouagadougou, Burkina Faso</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Soumbala Naturel. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <!-- ===== BOUTON WHATSAPP FLOTTANT ===== -->
+  <a href="https://wa.me/22654299523?text=Bonjour%2C%20je%20souhaite%20commander%20du%20soumbala."
+     target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- ===== PANIER LATÉRAL ===== -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-panel" id="cartPanel">
+    <div class="cart-header">
+      <h3><i class="fa-solid fa-basket-shopping"></i> Mon Panier</h3>
+      <button class="cart-close" id="cartClose" aria-label="Fermer">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <p class="cart-empty">Votre panier est vide.</p>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total</span>
+        <strong id="cartTotal">0 FCFA</strong>
+      </div>
+      <button class="btn btn-whatsapp btn-full" id="checkoutBtn">
+        <i class="fa-brands fa-whatsapp"></i> Commander sur WhatsApp
+      </button>
+    </div>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>

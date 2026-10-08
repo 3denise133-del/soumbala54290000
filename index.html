@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soumbala Naturel du Burkina Faso</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- ===== HEADER / NAVIGATION ===== -->
+  <header class="header" id="header">
+    <div class="container nav-container">
+      <a href="#accueil" class="logo">
+        <i class="fa-solid fa-seedling"></i>
+        <span>Soumbala<strong>Naturel</strong></span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link active">Accueil</a></li>
+          <li><a href="a-propos.html" class="nav-link">À propos</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="cart-btn" id="cartBtn" aria-label="Panier">
+          <i class="fa-solid fa-basket-shopping"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="accueil">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <p class="hero-tag">100% Naturel & Traditionnel</p>
+      <h1>Le vrai goût du <span>Soumbala</span> du Burkina Faso</h1>
+      <p class="hero-text">
+        Découvrez un soumbala authentique, préparé selon un savoir-faire ancestral,
+        sans additifs ni conservateurs. Une explosion de saveurs pour toutes vos sauces.
+      </p>
+      <div class="hero-buttons">
+        <a href="https://wa.me/22654299523?text=Bonjour%2C%20je%20souhaite%20commander%20du%20soumbala%20naturel."
+           target="_blank" class="btn btn-whatsapp">
+          <i class="fa-brands fa-whatsapp"></i> Commander sur WhatsApp
+        </a>
+        <a href="#produits" class="btn btn-outline">Voir les produits</a>
+      </div>
+      <div class="hero-badges">
+        <span><i class="fa-solid fa-leaf"></i> Naturel</span>
+        <span><i class="fa-solid fa-award"></i> Qualité Premium</span>
+        <span><i class="fa-solid fa-truck-fast"></i> Livraison rapide</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRODUITS ===== -->
+  <section class="section produits" id="produits">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-tag">Nos Produits</p>
+        <h2>Choisissez votre <span>Soumbala</span></h2>
+        <p class="section-desc">Des formats adaptés à tous vos besoins, du quotidien aux grandes occasions.</p>
+      </div>
+
+      <div class="products-grid" id="productsGrid">
+        <!-- Les produits sont générés par JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== POURQUOI NOUS CHOISIR ===== -->
+  <section class="section pourquoi" id="pourquoi">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-tag">Nos Engagements</p>
+        <h2>Pourquoi choisir notre <span>soumbala</span> ?</h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-leaf"></i></div>
+          <h3>100% Naturel</h3>
+          <p>Aucun additif, aucun conservateur. Un produit pur, issu de graines soigneusement sélectionnées.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-award"></i></div>
+          <h3>Qualité Premium</h3>
+          <p>Une sélection rigoureuse et un contrôle qualité à chaque étape de la fabrication.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-hands-bubbles"></i></div>
+          <h3>Hygiène Irréprochable</h3>
+          <p>Préparation dans un environnement propre et respectant les normes sanitaires.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-box-archive"></i></div>
+          <h3>Bonne Conservation</h3>
+          <p>Un produit séché et conditionné pour une conservation longue durée sans perdre ses arômes.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-people-group"></i></div>
+          <h3>Savoir-faire Traditionnel</h3>
+          <p>Une recette transmise de génération en génération, gage d'authenticité et de goût unique.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== À PROPOS / ORIGINE ===== -->
+  <section class="section apropos" id="apropos">
+    <div class="container apropos-grid">
+      <div class="apropos-image">
+        <img src="images/image1.jpg" alt="Graines de soumbala naturelles" loading="lazy">
+        <div class="apropos-image-badge">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Burkina Faso</span>
+        </div>
+      </div>
+      <div class="apropos-text">
+        <p class="section-tag">Notre Histoire</p>
+        <h2>L'origine et la fabrication du <span>soumbala</span></h2>
+        <p>
+          Le soumbala est un condiment traditionnel africain obtenu à partir des graines
+          du néré (<em>Parkia biglobosa</em>), un arbre emblématique des savanes du Burkina Faso.
+          Récoltées à maturité, les graines sont lavées, bouillies longuement, fermentées
+          puis séchées et façonnées à la main.
+        </p>
+        <p>
+          Notre savoir-faire perpétue cette tradition avec exigence : sélection des meilleures
+          graines, fermentation maîtrisée et séchage naturel au soleil. Le résultat est un
+          soumbala riche en goût, en protéines et en fer, idéal pour vos sauces, riz et plats mijotés.
+        </p>
+        <ul class="apropos-list">
+          <li><i class="fa-solid fa-check"></i> Graines de néré sélectionnées à la main</li>
+          <li><i class="fa-solid fa-check"></i> Fermentation naturelle et traditionnelle</li>
+          <li><i class="fa-solid fa-check"></i> Séchage au soleil, sans produits chimiques</li>
+          <li><i class="fa-solid fa-check"></i> Conditionnement soigné et hermétique</li>
+        </ul>
+        <a href="#produits" class="btn btn-primary">Découvrir nos produits</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TÉMOIGNAGES ===== -->
+  <section class="section avis" id="avis">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-tag">Témoignages</p>
+        <h2>Ils adorent notre <span>soumbala</span></h2>
+      </div>
+      <div class="avis-grid">
+        <div class="avis-card">
+          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p>« Un goût authentique que je n'avais pas retrouvé depuis des années. La qualité est au rendez-vous, je recommande vivement ! »</p>
+          <div class="avis-author">
+            <div class="avatar">A</div>
+            <div><strong>Aminata K.</strong><span>Ouagadougou</span></div>
+          </div>
+        </div>
+        <div class="avis-card">
+          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p>« Livraison rapide et produit très bien emballé. Mon riz au soumbala a un goût exceptionnel. Merci pour ce savoir-faire ! »</p>
+          <div class="avis-author">
+            <div class="avatar">I</div>
+            <div><strong>Issouf T.</strong><span>Bobo-Dioulasso</span></div>
+          </div>
+        </div>
+        <div class="avis-card">
+          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p>« Enfin un soumbala vraiment naturel, sans odeur chimique. Toute ma famille en raffole. Je commande régulièrement. »</p>
+          <div class="avis-author">
+            <div class="avatar">F</div>
+            <div><strong>Fatoumata S.</strong><span>Koudougou</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section faq" id="faq">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-tag">Questions fréquentes</p>
+        <h2>Vous avez des <span>questions</span> ?</h2>
+      </div>
+      <div class="faq-list" id="faqList">
+        <!-- FAQ générée par JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section contact" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-info">
+        <p class="section-tag">Contactez-nous</p>
+        <h2>Parlons de votre <span>commande</span></h2>
+        <p>Une question, une commande spéciale ou un besoin en gros ? Écrivez-nous, nous répondons rapidement.</p>
+        <ul class="contact-list">
+          <li><i class="fa-brands fa-whatsapp"></i> <span>+226 70 00 00 00</span></li>
+          <li><i class="fa-solid fa-envelope"></i> <span>contact@soumbala-naturel.bf</span></li>
+          <li><i class="fa-solid fa-location-dot"></i> <span>Ouagadougou, Burkina Faso</span></li>
+          <li><i class="fa-solid fa-clock"></i> <span>Lun - Sam : 8h - 19h</span></li>
+        </ul>
+        <a href="https://wa.me/22654299523?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20le%20soumbala."
+           target="_blank" class="btn btn-whatsapp">
+          <i class="fa-brands fa-whatsapp"></i> Discuter sur WhatsApp
+        </a>
+      </div>
+      <div class="contact-image">
+        <img src="images/image2.jpg" alt="Cuisine traditionnelle africaine au soumbala" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="#accueil" class="logo footer-logo">
+          <i class="fa-solid fa-seedling"></i>
+          <span>Soumbala<strong>Naturel</strong></span>
+        </a>
+        <p>Le goût authentique du Burkina Faso, dans votre cuisine.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#accueil">Accueil</a></li>
+          <li><a href="#apropos">À propos</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><i class="fa-brands fa-whatsapp"></i> +226 70 00 00 00</li>
+          <li><i class="fa-solid fa-envelope"></i> contact@soumbala-naturel.bf</li>
+          <li><i class="fa-solid fa-location-dot"></i> Ouagadougou, Burkina Faso</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Soumbala Naturel. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <!-- ===== BOUTON WHATSAPP FLOTTANT ===== -->
+  <a href="https://wa.me/22654299523?text=Bonjour%2C%20je%20souhaite%20commander%20du%20soumbala."
+     target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- ===== PANIER LATÉRAL ===== -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-panel" id="cartPanel">
+    <div class="cart-header">
+      <h3><i class="fa-solid fa-basket-shopping"></i> Mon Panier</h3>
+      <button class="cart-close" id="cartClose" aria-label="Fermer">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <p class="cart-empty">Votre panier est vide.</p>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total</span>
+        <strong id="cartTotal">0 FCFA</strong>
+      </div>
+      <button class="btn btn-whatsapp btn-full" id="checkoutBtn">
+        <i class="fa-brands fa-whatsapp"></i> Commander sur WhatsApp
+      </button>
+    </div>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>
